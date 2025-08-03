@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Achraf Wildcard - Unlock Your Health & Wealth</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    margin: 0; padding: 0;
+  }
+  header {
+    background: #1e88e5;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 10px;
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+  header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  main {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .free-offer {
+    background: #e3f2fd;
+    border: 2px solid #1e88e5;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .free-offer h2 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+    color: #0d47a1;
+  }
+  .free-offer p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #0d47a1;
+    font-weight: 600;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  input[type="email"] {
+    flex: 1 1 250px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #1e88e5;
+    border-radius: 6px;
+  }
+  button {
+    background: #1e88e5;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #1565c0;
+  }
+  .thankyou-message {
+    margin-top: 20px;
+    color: #0d47a1;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .main-product {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+    text-align: center;
+  }
+  .main-product h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #222;
+  }
+  .main-product p {
+    font-size: 1.15rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    color: #444;
+  }
+  .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #e53935;
+  }
+  .buy-btn {
+    background: #e53935;
+    color: white;
+    font-weight: 700;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .buy-btn:hover {
+    background: #ab000d;
+  }
+  footer {
+    margin: 60px 0 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  @media (max-width: 480px) {
+    header h1 { font-size: 2rem; }
+    .free-offer h2 { font-size: 1.5rem; }
+    .main-product h2 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Get Your FREE Nutrition Starter Guide</h1>
+  <p>Simple, proven steps to boost your health — no fluff, just real results.</p>
+</header>
+<main>
+  <section class="free-offer">
+    <h2>Grab This Exclusive Gift</h2>
+    <p>Enter your email below and receive instant access to your FREE Nutrition Starter Guide — your first step toward feeling amazing every day.</p>
+    <form id="emailForm">
+      <input type="email" id="emailInput" name="email" placeholder="Your best email" required />
+      <button type="submit">Send My Free Guide</button>
+    </form>
+    <div class="thankyou-message" id="thankYouMessage" style="display:none;">
+      Thank you! Check your inbox soon for your guide and more exclusive tips.
+    </div>
+  </section>
+
+  <section class="main-product" aria-label="Fitness Ebook Offer">
+    <h2>Still waiting for the “right time” to feel good again?</h2>
+    <p>In 21 days, you’ll start to see a version of yourself you haven’t met in years.</p>
+    <p class="price">$9.99 <span style="font-weight:400; font-size:1rem; color:#666;">(Limited Time Offer)</span></p>
+    <a href="https://wildcardachraf.gumroad.com/l/poewqw" target="_blank" rel="noopener" class="buy-btn" aria-label="Buy 21-Day Body Reset Ebook">
+      Start Today.Or stay stuck.
+    </a>
+  </section>
+</main>
+<footer>
+  &copy; 2025 Achraf Wildcard. All rights reserved.
+</footer>
+
+<script>
+  const form = document.getElementById('emailForm');
+  const thankYou = document.getElementById('thankYouMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const emailValue = document.getElementById('emailInput').value;
+
+    // Basic email validation
+    if (!emailValue || !emailValue.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // Here you would send the email to your email marketing service or database
+    // For demo, just show thank you message and clear input
+    thankYou.style.display = 'block';
+    form.reset();
+
+    // Optionally, you can disable the form after submission to avoid duplicates
+    form.querySelector('button').disabled = true;
+    form.querySelector('button').innerText = 'Sent!';
+  });
+</script>
+</body>
+</html>
